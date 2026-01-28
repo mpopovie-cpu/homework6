@@ -2,31 +2,19 @@ package ru.otus.java.basic;
 
 public class Main {
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
+
+        Plate plate = new Plate(20);
 
         Cat[] cats = {
-                new Cat( "Борис" , 10 ),
-                new Cat(  "Мурзик",   5  ),
-                new Cat("Барсик" , 15)
+                new Cat("Барсик", 5),
+                new Cat("Мурзик", 10),
+                new Cat("Рыжик", 8)
         };
 
-
-        Plate plate = new Plate( 20 );
-
-
-
-        for ( Cat cat  :  cats ) {
-            cat.eat( plate );
+        for (Cat cat : cats) {
+            cat.eat(plate);
+            plate.info();
         }
-
-
-
-        System.out.println(   "  -------- " );
-
-        for ( Cat cat : cats ) {
-            System.out.println( cat );
-        }
-
-        System.out.println( plate );
     }
 }

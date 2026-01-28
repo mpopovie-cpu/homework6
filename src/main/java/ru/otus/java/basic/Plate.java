@@ -1,49 +1,24 @@
 package ru.otus.java.basic;
 
-
 public class Plate {
 
     private int food;
-    private int  maxFood;
+    private int maxFood;
 
-
-
-    public Plate( int maxFood ) {
-
+    public Plate(int maxFood) {
         this.maxFood = maxFood;
-        this.food = maxFood;   //  тарелка   сразу   полная
+        this.food = maxFood;
     }
 
-
-
-    public boolean decreaseFood( int i ) {
-
-        if ( food - i < 0 ) {
-            return false;
-        } else {
-            food -= i;
+    public boolean decreaseFood(int amount) {
+        if (food >= amount) {
+            food -= amount;
             return true;
         }
+        return false;
     }
 
-
-
-    public void increaseFood( int i ) {
-
-        food += i;
-
-        if ( food > maxFood ) {
-            food = maxFood;
-        }
-    }
-
-
-
-    @Override
-    public String toString() {
-        return "Plate{" +
-                "food=" + food +
-                ", maxFood=" + maxFood +
-                '}';
+    public void info() {
+        System.out.println("Еды в тарелке: " + food);
     }
 }
